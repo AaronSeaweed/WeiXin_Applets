@@ -1,0 +1,34 @@
+<view class="nullcar" hidden='{{hasList}}'>
+  <image src="../../img/nullcar.png"></image>
+  <text>购物车竟然是空的</text>
+</view>
+<view class="body" hidden='{{!hasList}}'>
+  <block wx:for="{{carts}}" wx:key="{{index}}">
+      <view class="carfoodlist">
+          <view class="checkfood">
+            <checkbox value="" checked="" />
+          </view><!--单选按钮-->
+          <view class="food-img">
+              <image class="carfood-img" src="../../img/{{item.img}}"></image><!--图片-->
+          </view>
+          <view class="food-details">
+              <view class="food-content">
+                  <text>{{item.foodname}}{{item.content}}</text><!--内容描述-->
+              </view>
+              <view class="food-price">
+                  <text>￥{{item.price}}</text><!--价格-->
+              </view>
+              <view class="food-count-del">
+                  <view class="operfood">
+                    <image src="../../img/lessfood.png"></image><text>{{item.count}}</text><image src="../../img/addfood.png"></image></view><!--数量-->
+                  <view class="delimg"><image src='../../img/delfood.png'></image></view>
+              </view>
+          </view>
+      </view>
+  </block>
+  <view class="car-foot">
+      <checkbox class="checkfood allcheck" value="" checked="" >全选</checkbox>
+      <view class="total_text">合计：<text>￥{{totalPrice}}</text></view>  
+      <button class="total_js" size="mini">去结算({{goodsCount}})</button>  
+  </view>  
+</view>

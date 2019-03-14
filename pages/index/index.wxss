@@ -1,0 +1,117 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.index-logo{
+  width:200rpx;
+  height:70rpx;
+  margin-left:20rpx;
+}
+.search{
+  width:100%
+}
+.search view{
+  margin:0 auto;
+  width:94%;
+  height:60rpx;
+  background-color:#eeeeee;
+  font-size:14px;
+  text-align:center;
+  color:#999999;
+  line-height:60rpx;
+}
+.search view image{
+  width:40rpx;
+  height:40rpx;
+  vertical-align:middle;
+}
+
+.menu_box{
+  display: flex;
+  width:94%;
+  margin:0 auto;
+}
+.menu_box scroll-view{
+  white-space:nowrap;
+}
+.menu{
+  flex: 1;
+  font-size:30rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin:10rpx 40rpx;
+  display:inline-block;
+  margin-left:0
+}
+.borders{
+  border-bottom: 4rpx solid #a3158e;
+  color: #a3158e;
+  font-size:18px;
+  font-weight:bold;
+
+}
+.tab{
+  min-height:700rpx;
+  width:100%;
+}
+.tab .food{
+  width:200rpx;
+  height:280rpx;
+  border:1px #f0efed solid;
+  display:inline-block;
+  margin:22rpx;
+  line-height:32rpx;
+  border-radius:10%;
+  font-size:12px;
+}
+.tab .food .foodimg{
+  width:150rpx;
+  height:150rpx;
+  border-radius:50%;
+  display:block;
+  margin:20rpx auto;
+}
+
+.tab .food .foodname{
+  margin:0 auto;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  width:90%;
+  display:block;
+  text-align:center;
+}
+.tab .food .shopcar{
+  width:40rpx;
+  height:40rpx;
+}
+
+.tab .food view .price{
+  float: left;
+  margin:22rpx 0 0 24rpx;
+  font-weight: bold;
+  color:#a3158e;
+}
+
+.tab .food view .shopcar{
+  float: right;
+  margin:18rpx 24rpx;
+}

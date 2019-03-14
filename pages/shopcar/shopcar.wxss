@@ -1,0 +1,27 @@
+.body{border-top:1px #f8f8f8 solid;margin-bottom:60rpx;}
+.nullcar image{width:256rpx;height:256rpx;margin:60rpx auto;display: block}
+.nullcar{color:#a3158e;text-align: center;font-size: 14px}
+
+.carfoodlist{border-bottom:1px #f8f8f8 solid;display:flex;font-size:14px;height:240rpx;}
+.allcheckfood{float: left}
+.checkfood{line-height: 240rpx;margin:0 20rpx}
+.checkfood .wx-checkbox-input{width: 30rpx;height: 30rpx;}
+.checkfood .wx-checkbox-input.wx-checkbox-input-checked::before{color:#a3158e}
+
+.operfood{width:40%}
+.operfood text{margin-top:-10px;width:35rpx;display:block;margin:-17rpx 20rpx;text-align:center;}
+.delimg{width:60%}
+.delimg image{width:40rpx;height:40rpx;display:block;line-height: 240rpx;margin-right:20rpx;float:right}
+.carfood-img{width:150rpx;height:150rpx;border-radius:50%;display:block;margin-top:36rpx;}
+.food-count-del{display: flex}
+.food-details{margin-left: 30rpx;width:100%;}
+.food-details view{line-height: 80rpx}
+.food-price{color:#a3158e}
+.operfood {display: flex}
+.operfood image{width: 36rpx;height:36rpx;vertical-align: middle}
+
+.car-foot{position:fixed;bottom:0;width:100%;height:60rpx;background:#fff;line-height:60rpx;}
+.car-foot .total_text{float:left;margin-left:20rpx;}
+.car-foot .total_js{float:right;background: #a3158e;border:0;border-radius:0;color:#fff;height:100%;}
+
+.allcheck{float: left;line-height: 60rpx;font-size:16px;}

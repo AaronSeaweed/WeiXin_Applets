@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/order/order",
+    "pages/perCenter/perCenter",
+    "pages/shopcar/shopcar"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "老徐吃什么？",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#eeeeee"
+  },
+  "tabBar": {
+    "color":"#000000",
+    "selectedColor":"#a3158e",
+    "backgroundColor":"#fff",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/shopcar/shopcar",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/perCenter/perCenter",
+        "text": "我的"
+      }
+    ]
+  }
+}

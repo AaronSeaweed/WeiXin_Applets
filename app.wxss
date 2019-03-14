@@ -1,0 +1,49 @@
+/**app.wxss**/
+/* .container {
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}  */
+page {
+  height: 100%;
+}
+ 
+/*这个100%屏幕高度*/
+ 
+.container {
+  font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif,
+                 sans-serif;
+  font-size: 32rpx;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20rpx 0rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+/*隐藏滚动条*/
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}

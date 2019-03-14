@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="">
+    <image src='../../img/index_logo.png' class="index-logo" mode="scaleToFill"></image>
+  </view>
+  <view class="search">
+    <view><image src="../../img/search.png"></image>搜索</view>
+  </view>
+  <view class="menu_box">
+    <scroll-view scroll-x>
+      <view wx:for="{{menuList}}" wx:key="{{item.currentid}}" class='menu {{menuTapCurrent==item.currentid?"borders":""}}' data-current='{{item.currentid}}' catchtap="menuTap">{{item.menuNmae}}</view>
+    </scroll-view>
+  </view>
+  <view class="tab">
+  <scroll-view scroll-y wx:for="{{menuList}}" wx:key="{{item.currentid}}" class="tab" style='height:{{scroll_height}}rpx' hidden="{{menuTapCurrent!=item.currentid}}">
+    <view wx:for="{{foodList}}" wx:key="{{item}}" class="food" bindtap="AddCar" data-index="{{index}}" data-food="{{foodList}}">
+      <image class="foodimg" src="../../img/{{item.img}}"/>
+      <text class="foodname">{{item.foodname}}{{item.content}}</text>
+      <view>
+        <text class="price">￥{{item.price}}</text>
+        <image class="shopcar" src="../../img/shoppingcart.png"/>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+  <!-- <view class="userinfo">获取用户信息
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+  <!-- <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>
