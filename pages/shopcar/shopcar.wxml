@@ -4,10 +4,11 @@
 </view>
 <view class="body" hidden='{{!hasList}}'>
   <block wx:for="{{carts}}" wx:key="{{index}}">
+  <checkbox-group bindchange="checkboxChange" data-index="{{index}}">
       <view class="carfoodlist">
-          <view class="checkfood">
-            <checkbox value="" checked="" />
-          </view><!--单选按钮-->
+          <view class="checkfood"><!--单选按钮-->
+            <checkbox value="{{index}}" checked="{{item.checked}}"/>
+          </view>
           <view class="food-img">
               <image class="carfood-img" src="../../img/{{item.img}}"></image><!--图片-->
           </view>
@@ -21,13 +22,16 @@
               <view class="food-count-del">
                   <view class="operfood">
                     <image src="../../img/lessfood.png"></image><text>{{item.count}}</text><image src="../../img/addfood.png"></image></view><!--数量-->
-                  <view class="delimg"><image src='../../img/delfood.png'></image></view>
+                  <view class="delimg"><image src='../../img/delfood.png' bindtap='delcarfood' data-index="{{index}}"></image></view>
               </view>
           </view>
       </view>
+      </checkbox-group>
   </block>
   <view class="car-foot">
-      <checkbox class="checkfood allcheck" value="" checked="" >全选</checkbox>
+      <checkbox-group bindchange="allcheckboxChange" class="checkfood">
+        <checkbox class="checkfood allcheck" value="" checked="{{selectAllStatus}}" >全选</checkbox>
+      </checkbox-group>
       <view class="total_text">合计：<text>￥{{totalPrice}}</text></view>  
       <button class="total_js" size="mini">去结算({{goodsCount}})</button>  
   </view>  
