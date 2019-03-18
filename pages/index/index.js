@@ -12,7 +12,8 @@ Page({
     menuList: [],
     foodList:[],
     scroll_height:0,
-    carData:[]
+    carData:[],
+    menuindex:1
   },
   //事件处理函数
   bindViewTap: function() {
@@ -55,7 +56,7 @@ Page({
     this.getMenuList();
   },
   onShow: function () {
-    this.getFoodList(1);
+    this.getFoodList(this.data.menuindex);
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -106,7 +107,8 @@ Page({
         if (res.data.status == 200 && res.data.message == "success") {
           that.setData({
             hasData: true,
-            foodList: res.data.data
+            foodList: res.data.data,
+            menuindex: foodtypeid
           });
         }
         else if (res.data.code == 500) {
@@ -160,10 +162,12 @@ Page({
                 }
               }
               // 遍历完购物车后，没有对应的item项，把carData的当前项放入购物车数组
+              that.data.carData[i].checked = true;//默认设置选择
               arr.push(that.data.carData[i]);
             }
             // 购物车没有数据，把item项push放入当前数据（第一次存放时）  
             else {
+              that.data.carData[i].checked=true;//默认设置选择
               arr.push(that.data.carData[i]);
             }
             // 最后，把购物车数据，存放入缓存  

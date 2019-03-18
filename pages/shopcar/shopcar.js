@@ -4,8 +4,8 @@ Page({
     hasList: false,          // 列表是否有数据
     totalPrice: 0,           // 总价，初始为0
     goodsCount: 0,           // 数量
-    selectAllStatus: true,    // 全选状态，默认全选
-    firstenter: true
+    selectAllStatus: true    // 全选状态，默认全选
+    //firstenter: true
   },
   onShow() {
     // 获取产品展示页保存的缓存数据（购物车的缓存数组，没有数据，则赋予一个空数组）  
@@ -13,15 +13,15 @@ Page({
     // 有数据的话并且非首次进来，就遍历数据，计算总金额 和 总数量  
     if (arr.length > 0) {
       for (var i in arr) {
-        if (this.data.firstenter){
-          arr[i].checked = true;
-        }
+        // if (this.data.firstenter){
+        //   arr[i].checked = true;
+        // }
         if (arr[i].checked){
           this.data.totalPrice += Number(arr[i].price.toFixed(2)) * arr[i].count;
           this.data.goodsCount += Number(arr[i].count);
         }
       }
-      this.data.firstenter = false;
+      //this.data.firstenter = false;
       // 更新数据  
       this.setData({
         hasList: true,
@@ -120,7 +120,7 @@ Page({
     });
     if(del){
       this.setData({
-        selectAllStatus: foodcount == 0 ? false : true
+        selectAllStatus: foodcount == this.data.carts.length ? true : false
       })
     }
     wx.setStorageSync('cart', arr);
