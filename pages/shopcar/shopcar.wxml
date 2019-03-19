@@ -21,7 +21,7 @@
               </view>
               <view class="food-count-del">
                   <view class="operfood">
-                    <image bindtap='lesscount' src="../../img/lessfood.png"></image><text>{{item.count}}</text><image bindtap='addcount' src="../../img/addfood.png"></image></view><!--数量-->
+                    <image bindtap='lesscount' src="../../img/lessfood.png" data-index="{{index}}"></image><text>{{item.count}}</text><image bindtap='addcount' src="../../img/addfood.png" data-index="{{index}}"></image></view><!--数量-->
                   <view class="delimg"><image src='../../img/delfood.png' bindtap='delcarfood' data-index="{{index}}"></image></view>
               </view>
           </view>

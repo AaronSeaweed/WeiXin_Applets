@@ -27,7 +27,8 @@ Page({
         hasList: true,
         carts: arr,
         totalPrice: this.data.totalPrice.toFixed(2),
-        goodsCount: this.data.goodsCount
+        goodsCount: this.data.goodsCount,
+        selectAllStatus: this.data.goodsCount == arr.length ? true : false
       });
       wx.setStorageSync('cart', arr);//更新缓存数据
     }else{
@@ -116,7 +117,7 @@ Page({
     this.setData({
       carts: arr,
       totalPrice: totprice.toFixed(2),
-      goodsCount: foodcount,
+      goodsCount: foodcount
     });
     if(del){
       this.setData({
@@ -124,5 +125,31 @@ Page({
       })
     }
     wx.setStorageSync('cart', arr);
+  },
+  /**
+   * 购物车商品减少操作
+   */
+  lesscount:function(e){
+    if (this.data.carts[e.target.dataset.index].count == 1) {
+      this.delcarfood(e);
+    }else{
+      for (let i = 0; i < this.data.carts.length; i++) {
+        if (i == e.target.dataset.index) {
+          this.data.carts[i].count--;
+        }
+      }
+      this.recalculate(this.data.carts);
+    }
+  },
+  /**
+   * 购物车商品增多操作
+   */
+  addcount:function(e){
+    for (let i = 0; i < this.data.carts.length; i++) {
+      if (i == e.target.dataset.index) {
+        this.data.carts[i].count++;
+      }
+    }
+    this.recalculate(this.data.carts);
   }
 })
