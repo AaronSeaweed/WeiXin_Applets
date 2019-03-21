@@ -33,6 +33,6 @@
         <checkbox class="checkfood allcheck" value="" checked="{{selectAllStatus}}" >全选</checkbox>
       </checkbox-group>
       <view class="total_text">合计：<text>￥{{totalPrice}}</text></view>  
-      <button class="total_js" size="mini">去结算({{goodsCount}})</button>  
+      <button class="total_js" size="mini" bindtap='checkOrder'>去结算({{goodsCount}})</button>  
   </view>  
 </view>

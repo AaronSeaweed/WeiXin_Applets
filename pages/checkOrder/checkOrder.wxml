@@ -1,0 +1,28 @@
+<view>
+    <view class='deliveryInfo'>
+      <text>选什么地址？我家你还不知道？</text>
+      <text>填什么号码？我号码你都不知道？</text>
+    </view>
+    <view class='goodslist'>
+        <view class="imgbox">
+            <scroll-view scroll-x class='goodsimg'>
+                <block wx:for="{{paygoods}}" wx:key="{{item.foodid}}">
+                  <image src='../../img/{{item.img}}'></image>
+                </block>
+            </scroll-view>
+        </view>
+        <text>共{{goodsTypeCount}}件</text><image class="ordergoodlist" src='../../img/sel.png'></image>
+    </view>
+    <view class='priceDetail'>
+        <view><text>商品总价</text><text>￥{{totalPrice}}</text></view>
+        <view><text>优惠券</text><text>无可用商品券</text><image src='../../img/sel.png'></image></view>
+        <view><text>红包</text><text>无可用红包</text><image src='../../img/sel.png'></image></view>
+        <view><text>商品实付</text><text>￥</text></view>
+        <view><text>配送费</text><text>￥</text></view>
+        <view><text>合计： ￥{{totalPrice}}</text></view>
+    </view>
+    <view class='Gotopay'>
+      <view class="total_text">付款：<text>￥{{totalPrice}}</text></view>  
+      <button class="total_js" size="mini" bindtap='checkOrder'>去支付</button>  
+    </view>
+</view>

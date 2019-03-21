@@ -4,31 +4,29 @@ Page({
     hasList: false,          // 列表是否有数据
     totalPrice: 0,           // 总价，初始为0
     goodsCount: 0,           // 数量
+    goodsTypeCount:0,        // 商品类型数
     selectAllStatus: true    // 全选状态，默认全选
-    //firstenter: true
   },
   onShow() {
     // 获取产品展示页保存的缓存数据（购物车的缓存数组，没有数据，则赋予一个空数组）  
     var arr = wx.getStorageSync('cart') || [];  
     // 有数据的话并且非首次进来，就遍历数据，计算总金额 和 总数量  
     if (arr.length > 0) {
+      this.data.goodsTypeCount = 0;
       for (var i in arr) {
-        // if (this.data.firstenter){
-        //   arr[i].checked = true;
-        // }
-        if (arr[i].checked){
+        if (arr[i].checked) {
+          this.data.goodsTypeCount++;
           this.data.totalPrice += Number(arr[i].price.toFixed(2)) * arr[i].count;
           this.data.goodsCount += Number(arr[i].count);
         }
       }
-      //this.data.firstenter = false;
       // 更新数据  
       this.setData({
         hasList: true,
         carts: arr,
         totalPrice: this.data.totalPrice.toFixed(2),
         goodsCount: this.data.goodsCount,
-        selectAllStatus: this.data.goodsCount == arr.length ? true : false
+        selectAllStatus: this.data.goodsTypeCount == arr.length ? true : false
       });
       wx.setStorageSync('cart', arr);//更新缓存数据
     }else{
@@ -37,8 +35,9 @@ Page({
       });
     }  
   },
+  //离开页面时清空零时变量,不然会一直保持上一次的数据
   onHide(){
-    setTimeout(() => { this.setData({ totalPrice: 0, goodsCount:0})},200)
+    setTimeout(() => { this.setData({ totalPrice: 0, goodsCount: 0})},500)
   },
   /*
   选择/取消购物车商品
@@ -108,8 +107,10 @@ Page({
   recalculate: function (arr, del){
     let totprice = 0;
     let foodcount = 0;
+    this.data.goodsTypeCount = 0;
     for (let i = 0; i < arr.length; i++) {//重新累计商品总价和数量
       if (arr[i].checked) {//选中的商品
+        this.data.goodsTypeCount++;
         totprice += Number(arr[i].price.toFixed(2)) * arr[i].count;
         foodcount += Number(arr[i].count);
       }
@@ -121,7 +122,7 @@ Page({
     });
     if(del){
       this.setData({
-        selectAllStatus: foodcount == this.data.carts.length ? true : false
+        selectAllStatus: this.data.goodsTypeCount == this.data.carts.length ? true : false
       })
     }
     wx.setStorageSync('cart', arr);
@@ -151,5 +152,13 @@ Page({
       }
     }
     this.recalculate(this.data.carts);
+  },
+  /**
+   * 
+   */
+  checkOrder:function(){
+    wx.navigateTo({
+      url: '../checkOrder/checkOrder'
+    })
   }
 })

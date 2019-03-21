@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/order/order",
     "pages/perCenter/perCenter",
-    "pages/shopcar/shopcar"
+    "pages/shopcar/shopcar",
+    "pages/checkOrder/checkOrder"
   ],
   "window":{
     "backgroundTextStyle":"light",
