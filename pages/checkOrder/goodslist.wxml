@@ -1,0 +1,17 @@
+
+<view>
+  <scroll-view scroll-x>
+    <block wx:for="{{goodslist}}" wx:key="{{item.foodid}}">
+      <view class='gooddateil'>
+          <view class='goodimg'><image src='../../img/{{item.img}}'></image></view>
+          <view class='price_con'>
+            <text>{{item.content}}</text>
+            <text>￥{{item.price}}</text>
+          </view>
+          <view class='goodcount'>
+            <text>×{{item.count}}</text>
+          </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

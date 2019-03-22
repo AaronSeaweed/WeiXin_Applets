@@ -7,7 +7,15 @@ Page({
     goodsTypeCount:0,        // 商品类型数
     selectAllStatus: true    // 全选状态，默认全选
   },
+  onLoad(){
+    wx.showLoading({
+      title: '加载中',
+    })
+  },
   onShow() {
+    setTimeout(() => {
+      wx.hideLoading()
+    }, 700)
     // 获取产品展示页保存的缓存数据（购物车的缓存数组，没有数据，则赋予一个空数组）  
     var arr = wx.getStorageSync('cart') || [];  
     // 有数据的话并且非首次进来，就遍历数据，计算总金额 和 总数量  

@@ -1,0 +1,10 @@
+.listbox{border-bottom: 1px solid #f0f0f0;overflow:hidden;width:95%;margin:0 auto;margin-bottom:20rpx;}
+.addresstext{float:left;width:85%;height:auto;line-height:50rpx;padding:10rpx;}
+.addresstext text:first-of-type{font-size:16px}
+.addresstext text:last-of-type{font-size:14px;display: block;color:#919191}
+.updateadd{float: right;height:140rpx;line-height:140rpx;font-size:16px;color:#919191;border-left:1px #f0f0f0 solid;width:11%;text-align:center;}
+.addaddressbox{margin-top:40rpx}
+.btn_addaddress{background-color:#a3158e;color:#fff;font-size:14px;width:200rpx}
+
+
+

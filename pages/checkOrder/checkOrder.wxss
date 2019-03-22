@@ -1,15 +1,19 @@
 page{background-color:#f7f7f7;}
-.deliveryInfo{margin:20rpx auto;border-radius: 10px;background-color:#fff;height:160rpx;width: 94%}
+.deliveryInfo{margin:20rpx auto;border-radius: 10px;background-color:#fff;height:auto;width: 94%;padding-top:1rpx;padding-bottom:1rpx;}
+.deliveryInfo view{width:95%;margin:13rpx auto}
+.deliveryInfo .dateiladdress{position: relative}
+.deliveryInfo .dateiladdress text{font-size:16px;font-weight:bold;width:90%;}
+.deliveryInfo .dateiladdress image{width:32rpx;height:32rpx;position: absolute;right: 0rpx;top:6rpx;}
 .deliveryInfo text{display:block;font-size: 12px}
 .goodsimg{padding-left:10rpx;white-space:nowrap}
-.goodsimg image{width: 100rpx;height:100rpx;display: inline-block;border-radius:25px;margin:10rpx 16rpx 0 0}
-.imgbox{width:580rpx;display: flex}
+.goodsimg image{width: 100rpx;height:100rpx;display: inline-block;border-radius:25px;margin:10rpx 13rpx 0 0}
+.imgbox{width:560rpx;display: flex}
 .goodslist{position: relative;margin:10rpx auto;border-radius: 10px;background-color:#fff;height:120rpx;width:94%}
 .goodslist text{position: absolute;right:50rpx;top:40rpx;font-size:14px;}
 .goodslist .ordergoodlist{width:32rpx;height: 32rpx;position: absolute;right: 18rpx;top:46rpx}
 .Gotopay{position:fixed;bottom:0;width:100%;height:60rpx;background-color:#fff;line-height:60rpx;}
 .Gotopay .total_text{float:left;margin-left:20rpx;}
-.Gotopay .total_js{float:right;background: #a3158e;border:0;border-radius:0;color:#fff;height:100%;}
+.Gotopay .total_js{float:right;background: #a3158e;border:0;border-radius:0;color:#fff;height:100%;line-height:60rpx;}
 .priceDetail{margin:20rpx auto;border-radius: 10px;background-color:#fff;width:94%}
 .priceDetail view{border-bottom:1px #f7f7f7 solid;width:95%;margin:10rpx auto;padding-bottom:5px;position:relative;line-height:62rpx;}
 .priceDetail view:last-of-type{border-bottom:0px}

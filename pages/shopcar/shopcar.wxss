@@ -22,6 +22,6 @@
 
 .car-foot{position:fixed;bottom:0;width:100%;height:60rpx;background:#fff;line-height:60rpx;}
 .car-foot .total_text{float:left;margin-left:20rpx;}
-.car-foot .total_js{float:right;background: #a3158e;border:0;border-radius:0;color:#fff;height:100%;}
+.car-foot .total_js{float:right;background: #a3158e;border:0;border-radius:0;color:#fff;height:100%;line-height:60rpx;}
 
-.allcheck{float: left;line-height: 60rpx;font-size:16px;}
+.allcheck{float: left;line-height: 60rpx;font-size:16px;margin-left:0rpx;}

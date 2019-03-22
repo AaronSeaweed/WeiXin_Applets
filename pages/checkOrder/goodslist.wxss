@@ -1,0 +1,9 @@
+page{background-color:#f7f7f7;}
+.gooddateil{width:94%;margin: 10rpx auto;display:flex;background-color:#fff;height:200rpx;font-size:14px}
+.goodimg{width:30%;text-align:center;margin-top:21rpx;}
+.goodimg image{width:160rpx;height:160rpx;border-radius: 50%}
+.price_con{margin-left:50rpx;width:50%}
+.price_con text:first-of-type{display: block;margin-top:34rpx;}
+.price_con text:last-of-type{display: block;margin-top:54rpx;}
+.goodcount{width:20%}
+.goodcount text{display:block;margin-top:34rpx;text-align:center;}

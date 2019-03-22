@@ -4,7 +4,9 @@
     "pages/order/order",
     "pages/perCenter/perCenter",
     "pages/shopcar/shopcar",
-    "pages/checkOrder/checkOrder"
+    "pages/checkOrder/checkOrder",
+    "pages/checkOrder/goodslist",
+    "pages/checkOrder/setAddress"
   ],
   "window":{
     "backgroundTextStyle":"light",

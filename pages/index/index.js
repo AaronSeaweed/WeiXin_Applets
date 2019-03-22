@@ -47,9 +47,16 @@ Page({
     this.setData({
       scroll_height: windowHeight * 750 / windowWidth - 228 - 30
     })
-    this.getMenuList();
+    wx.showLoading({
+      title: '加载中',
+    })
+    
   },
   onShow: function () {
+    setTimeout(() => {
+      wx.hideLoading()
+    }, 500)
+    this.getMenuList();
     this.getFoodList(this.data.menuindex);
   },
   getUserInfo: function(e) {

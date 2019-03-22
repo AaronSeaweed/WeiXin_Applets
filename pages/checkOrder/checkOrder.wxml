@@ -1,7 +1,8 @@
 <view>
-    <view class='deliveryInfo'>
-      <text>选什么地址？我家你还不知道？</text>
-      <text>填什么号码？我号码你都不知道？</text>
+    <view class='deliveryInfo' bindtap='setaddress'>
+      <view class='address'><text>{{userinfo[0].province}}  {{userinfo[0].city}}  {{userinfo[0].Area}}</text></view>
+      <view class='dateiladdress'><text>{{userinfo[0].detailaddress}}</text><image class="ordergoodlist" src='../../img/sel.png'></image></view>
+      <view class='name_tel'><text>{{userinfo[0].username}} {{userinfo[0].Telphone}}</text></view>
     </view>
     <view class='goodslist'>
         <view class="imgbox">
@@ -11,7 +12,9 @@
                 </block>
             </scroll-view>
         </view>
-        <text>共{{goodsTypeCount}}件</text><image class="ordergoodlist" src='../../img/sel.png'></image>
+        <view bindtap='showgoodslist'>
+        <text>共{{goodsCount}}件</text><image class="ordergoodlist" src='../../img/sel.png'></image>
+        </view>
     </view>
     <view class='priceDetail'>
         <view><text>商品总价</text><text>￥{{totalPrice}}</text></view>
