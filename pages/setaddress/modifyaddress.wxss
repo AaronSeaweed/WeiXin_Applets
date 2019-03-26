@@ -1,0 +1,14 @@
+page{background-color:#f7f7f7}
+text,input{font-size:16px}
+input{display:inline-block;margin-top:14rpx}
+.addressform{margin-top:10rpx}
+.addressform view{background-color: #fff;border-bottom:1px #f7f7f7 solid;height:80rpx;}
+.addressform view text{float:left;margin:17rpx 60rpx 0 20rpx;}
+.addressform view:first-of-type text{margin-right:74rpx}
+.addresssub{margin-top:50rpx;}
+.saveaddress{width:88%;background-color: #fff;color:#a3158e;height:80rpx;line-height:80rpx;}
+.updateaddress{width:88%;background-color: #fff;color:#a3158e;height:80rpx;line-height:80rpx;}
+.deladdress{width:88%;background-color: #fff;color:#a3158e;height:80rpx;line-height:80rpx;margin-top:30rpx;}
+picker{display:inline-block;font-size:16px;line-height:80rpx;width:60%}
+.havesel{position: relative}
+.sel{width:32rpx;height: 32rpx;position: absolute;right: 18rpx;top:27rpx}

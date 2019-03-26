@@ -1,0 +1,16 @@
+<view>
+  <view class='addresskey'>
+    <image src='../../img/search.png'></image>
+    <input placeholder='请输入您的地址' adjust-position='false' bindinput='searchaddress'/>
+  </view>
+  <view class='addresslist'>
+      <scroll-view scroll-x>
+          <block wx:for="{{addressList}}" wx:key="{{index}}">
+              <view class='addressbox' bindtap='selectaddress' data-address='{{item.title}}' data-area='{{item.district}}'>
+                <text>{{item.title}}</text>
+                <text>{{item.address}}</text>
+              </view>
+          </block>
+      </scroll-view>
+  </view>
+</view>

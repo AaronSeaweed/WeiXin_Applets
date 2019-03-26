@@ -1,0 +1,57 @@
+<view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='addressform'>
+      <view>
+        <text>收 货 人</text>
+        <input placeholder='姓名' name="username" value='{{username}}'></input>
+      </view>
+
+      <view>
+        <text>联系电话</text>
+        <input placeholder='联系电话' type="number" name="Telphone" value='{{telphone}}'></input>
+      </view>
+
+      <view class='havesel'>
+        <text>选择城市</text>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <view class="picker">
+            <input type='hidden' hidden='true' name="province" value='{{multiArray[0][multiIndex[0]]}}' />
+            <input type='hidden' hidden='true' name="city" value='{{multiArray[1][multiIndex[1]]}}' />
+            <input type='hidden' hidden='true' name="Area" value='{{area}}' />
+            <label>{{multiArray[0][multiIndex[0]]}}</label>　<label>{{multiArray[1][multiIndex[1]]}}</label>　<label>{{area}} </label>
+          </view>
+        </picker>
+        <image class="sel" src='../../img/sel.png'></image>
+      </view>
+
+      <view class='havesel'>
+        <text>收货地址</text>
+        <input name="detailaddress" placeholder='请输入你的收货地址' bindtap='ReceiptAddress' data-city="{{multiArray[1][multiIndex[1]]}}" value='{{dateiladdress}}'></input>
+        <image class="sel" src='../../img/sel.png'></image>
+      </view>
+      
+      <view>
+        <text>楼号门牌</text>
+        <input name="doorplate" placeholder='楼号/单元/门牌号' value='{{doorplate}}'></input>
+      </view>
+
+      <view class='havesel'>
+        <text>地址类型</text>
+        <picker bindchange="bindPickerChange" value="{{addtypeindex}}" range="{{addresstype}}">
+          <view class="picker">
+            <input name="addresstype" type='hidden' hidden='true' value='{{addresstype[addtypeindex]}}' />
+            <label>{{addresstype[addtypeindex]}}</label>
+          </view>
+        </picker>
+        <image class="sel" src='../../img/sel.png'></image>
+      </view>
+      <input name="usestatus" type='hidden' hidden='true' value='{{usestatus}}' />
+      <input name="id" type='hidden' hidden='true' value='{{id}}' />
+    </view>
+    <view class='addresssub'>
+      <button class='saveaddress' form-type="submit" hidden="{{!operate}}">保存地址</button>
+      <button class='updateaddress' form-type="submit" hidden="{{operate}}" data-type="updateinfo">保存地址</button>
+      <button class='deladdress' bindtap='deladdress' hidden="{{operate}}" data-addid="{{id}}">删除地址</button>
+    </view>
+  </form>
+</view>

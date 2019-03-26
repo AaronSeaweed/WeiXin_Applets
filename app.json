@@ -6,8 +6,15 @@
     "pages/shopcar/shopcar",
     "pages/checkOrder/checkOrder",
     "pages/checkOrder/goodslist",
-    "pages/checkOrder/setAddress"
+    "pages/setaddress/setAddress",
+    "pages/setaddress/modifyaddress",
+    "pages/setaddress/seladdress"
   ],
+  "permission":{
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于地址搜索与展示"
+    }
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#ffffff",

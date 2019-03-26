@@ -2,10 +2,10 @@
     <scroll-view scroll-y>
       <view class='listbox' wx:for="{{addressinfo}}" wx:key="{{index}}">
         <view class='addresstext' bindtap='seladdress' data-info="{{addressinfo[index]}}">
-          <text>{{item.city}} {{item.Area}} {{item.detailaddress}}</text>
+          <text>{{item.city}} {{item.Area}} {{item.detailaddress}} {{item.doorplate}}</text>
           <text>{{item.username}} {{item.Telphone}}</text>
         </view>
-        <view class='updateadd'>
+        <view class='updateadd' bindtap='updateaddress' data-addid="{{item.id}}">
           <text>编辑</text>
         </view>
       </view>

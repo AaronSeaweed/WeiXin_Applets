@@ -1,0 +1,6 @@
+.addresskey input{width:90%;border-radius:7px;margin:0 auto;font-size:14px;padding-left:50rpx;background-color:#f7f7f7;}
+.addresskey image{width: 40rpx;height:40rpx;position:absolute;left:20rpx;top:10rpx;}
+.addressbox {border-bottom:1px #eeeeee solid;padding:15rpx;}
+.addressbox text{display:block}
+.addressbox text:first-of-type{font-size: 18px}
+.addressbox text:last-of-type{font-size: 14px;color:#b6b6b6}
