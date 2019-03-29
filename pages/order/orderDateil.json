@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "填写订单",
+  "navigationBarTitleText": "订单详情",
   "usingComponents": {
     "good_list": "../components/component-foodlist"
   }

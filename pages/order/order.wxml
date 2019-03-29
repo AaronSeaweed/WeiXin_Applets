@@ -1,0 +1,16 @@
+
+<view>
+    <scroll-view scroll-y="true">
+        <view wx:for="{{orderlist}}" wx:key="{{index}}" class='orderlist'>
+            <view class='date_status'><text>{{item.orderdate}}</text><text>{{item.statusname}}</text></view>
+            <view class='price_img'  bindtap='orderdateil'>
+              <view>
+                <good_list class='goodimg' prop-a="{{goodsCount}}" prop-b="{{item.img}}"></good_list>
+              </view>
+              <view class="payprice">实付￥{{item.payprice}}</view>
+            </view>
+            <view class='seldateil'><button class='orderdateil' bindtap='orderdateil'>查看详情</button></view>
+        </view>
+    </scroll-view>
+    
+</view>

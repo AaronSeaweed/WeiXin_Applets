@@ -33,13 +33,16 @@ Page({
         goodsCount: this.data.goodsCount,
         selectAllStatus: this.data.goodsTypeCount == arr.length ? true : false
       });
-      wx.hideLoading()
+     
       wx.setStorageSync('cart', arr);//更新缓存数据
     }else{
       this.setData({
         hasList: false,
       });
     }  
+  },
+  onReady(){
+    wx.hideLoading()
   },
   //离开页面时清空零时变量,不然会一直保持上一次的数据
   onHide(){
@@ -163,8 +166,16 @@ Page({
    * 
    */
   checkOrder:function(){
-    wx.navigateTo({
-      url: '../checkOrder/checkOrder'
-    })
+    if (this.data.goodsCount>0){
+      wx.navigateTo({
+        url: '../checkOrder/checkOrder'
+      })
+    }else{
+      wx.showToast({
+        title: '请选择有效商品',
+        icon: 'none',
+        duration: 2000
+      })
+    }
   }
 })

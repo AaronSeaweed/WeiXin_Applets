@@ -8,7 +8,8 @@ Page({
     goodsTypeCount:0,
     userinfo:[],
     hideadd:0,
-    grossPrice:0
+    grossPrice:0,
+    goodsimg:[]
   },
   onLoad(){
     wx.showLoading({
@@ -39,6 +40,7 @@ Page({
         this.data.totalPrice += Number(arr[i].price.toFixed(2)) * arr[i].count;
         this.data.goodsCount += Number(arr[i].count);
         this.data.paygoods.push(arr[i])
+        this.data.goodsimg.push(arr[i].img)
       }
     }
     this.setData({
@@ -46,7 +48,8 @@ Page({
       totalPrice: this.data.totalPrice.toFixed(2),
       goodsCount: this.data.goodsCount,
       goodsTypeCount: this.data.goodsTypeCount,
-      grossPrice: Number(this.data.totalPrice.toFixed(2))+5
+      grossPrice: Number(this.data.totalPrice.toFixed(2))+5,
+      goodsimg: this.data.goodsimg
     })
   }, 
   onHide: function () {
@@ -86,5 +89,9 @@ Page({
     wx.navigateTo({
       url: '../setaddress/setAddress'
     })
+  },
+  //生成订单
+  checkOrder:function(){
+      
   }
 });

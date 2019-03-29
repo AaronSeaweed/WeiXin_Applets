@@ -53,14 +53,13 @@ Page({
     
   },
   onShow: function () {
+    this.getMenuList();
+    this.getFoodList(this.data.menuindex);
     setTimeout(() => {
       wx.hideLoading()
     }, 500)
-    this.getMenuList();
-    this.getFoodList(this.data.menuindex);
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -72,7 +71,11 @@ Page({
     this.setData({
       menuTapCurrent: current
     });
-    this.getFoodList(current)
+    //滚动菜单
+    this.setData({
+      toView: "sw" + Number(current-2)
+    })
+    this.getFoodList(current);
   },
   getMenuList: function () {//获取食物类型
     let that = this;

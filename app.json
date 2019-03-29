@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/order/order",
+    "pages/order/orderDateil",
     "pages/perCenter/perCenter",
     "pages/shopcar/shopcar",
     "pages/checkOrder/checkOrder",

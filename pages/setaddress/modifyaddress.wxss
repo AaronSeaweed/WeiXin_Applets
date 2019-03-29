@@ -1,6 +1,6 @@
 page{background-color:#f7f7f7}
 text,input{font-size:16px}
-input{display:inline-block;margin-top:14rpx}
+input{display:inline-block;margin-top:10rpx}
 .addressform{margin-top:10rpx}
 .addressform view{background-color: #fff;border-bottom:1px #f7f7f7 solid;height:80rpx;}
 .addressform view text{float:left;margin:17rpx 60rpx 0 20rpx;}

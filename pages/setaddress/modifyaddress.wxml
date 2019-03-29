@@ -26,7 +26,7 @@
 
       <view class='havesel'>
         <text>收货地址</text>
-        <input name="detailaddress" placeholder='请输入你的收货地址' bindtap='ReceiptAddress' data-city="{{multiArray[1][multiIndex[1]]}}" value='{{dateiladdress}}'></input>
+        <input name="detailaddress" disabled='true' placeholder='请输入你的收货地址' bindtap='ReceiptAddress' data-city="{{multiArray[1][multiIndex[1]]}}" value='{{dateiladdress}}'></input>
         <image class="sel" src='../../img/sel.png'></image>
       </view>
       

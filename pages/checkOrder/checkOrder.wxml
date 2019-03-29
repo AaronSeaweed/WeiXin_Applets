@@ -5,18 +5,7 @@
       <view hidden='{{hideadd}}' class='name_tel'><text>{{userinfo.username}} {{userinfo.Telphone}}</text></view>
       <view class='seladdress'  hidden='{{!hideadd}}'>请选择收货地址<image class="ordergoodlist" src='../../img/sel.png'></image></view>
     </view>
-    <view class='goodslist'>
-        <view class="imgbox">
-            <scroll-view scroll-x class='goodsimg'>
-                <block wx:for="{{paygoods}}" wx:key="{{item.foodid}}">
-                  <image src='../../img/{{item.img}}'></image>
-                </block>
-            </scroll-view>
-        </view>
-        <view bindtap='showgoodslist'>
-        <text>共{{goodsCount}}件</text><image class="ordergoodlist" src='../../img/sel.png'></image>
-        </view>
-    </view>
+    <good_list prop-a="{{goodsCount}}" prop-b="{{goodsimg}}"></good_list>
     <view class='priceDetail'>
         <view><text>商品总价</text><text>￥{{totalPrice}}</text></view>
         <view><text>优惠券</text><text>无可用商品券</text><image src='../../img/sel.png'></image></view>

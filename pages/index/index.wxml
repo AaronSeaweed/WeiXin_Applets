@@ -7,8 +7,8 @@
     <view><image src="../../img/search.png"></image>搜索</view>
   </view>
   <view class="menu_box">
-    <scroll-view scroll-x>
-      <view wx:for="{{menuList}}" wx:key="{{item.currentid}}" class='menu {{menuTapCurrent==item.currentid?"borders":""}}' data-current='{{item.currentid}}' catchtap="menuTap">{{item.menuNmae}}</view>
+    <scroll-view scroll-x="true" scroll-into-view="{{toView}}">
+      <view wx:for="{{menuList}}" wx:key="sw" class='menu {{menuTapCurrent==item.currentid?"borders":""}}' data-current='{{item.currentid}}' catchtap="menuTap" id='sw{{item.currentid}}'>{{item.menuNmae}}</view>
     </scroll-view>
   </view>
   <view class="tab">

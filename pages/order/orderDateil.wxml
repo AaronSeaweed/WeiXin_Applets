@@ -1,0 +1,41 @@
+<view>
+    <view>
+        <view><image></image> 订单已取消</view>
+        <view><button>联系客服</button></view>
+    </view>
+    <view>
+        <view>配送信息</view>
+        <view>
+          地址
+        </view>
+    </view>
+    <view>
+        <view>商品信息</view>
+        <view>
+          <good_list class='goodimg' prop-a="{{goodsCount}}" prop-b="{{orderlist}}"></good_list>
+        </view>
+    </view>
+    <view>
+        <view>订单信息</view>
+        <view>
+          订单编号：
+        </view>
+        <view>
+          创建时间：
+        </view>
+    </view>
+    <view>
+        <view>
+        商品总价：
+        </view>
+        <view>
+        商品实付：
+        </view>
+        <view>
+        配送费：
+        </view>
+        <view>
+        合计：
+        </view>
+    </view>
+</view>

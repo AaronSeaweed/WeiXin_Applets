@@ -1,0 +1,12 @@
+<view class='goodslist'>
+    <view class="imgbox">
+        <scroll-view scroll-x class='goodsimg'>
+            <block wx:for="{{propB}}" wx:key="{{item.foodid}}">
+               <image src='../../img/{{item}}'></image>
+            </block>
+         </scroll-view>
+    </view>
+    <view bindtap='showgoodslist' hidden='{{!propA}}'>
+    <text>共{{propA}}件</text><image class="ordergoodlist" src='../../img/sel.png'></image>
+    </view>
+</view>
