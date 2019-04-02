@@ -25,14 +25,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var arr = wx.getStorageSync('cart') || [];
-    for (var i in arr) {
-      if (arr[i].checked) {
-        this.data.goodslist.push(arr[i])
+    let arr;
+    if(this.options.op=="orderinfo"){
+      arr = wx.getStorageSync('orderinfo') || [];
+    }else{
+      arr = wx.getStorageSync('cart') || [];
+      for (var i in arr) {
+        if (arr[i].checked) {
+          this.data.goodslist.push(arr[i])
+        }
       }
+      arr = this.data.goodslist
     }
     this.setData({
-      goodslist: this.data.goodslist
+      goodslist: arr
     })
   },
 

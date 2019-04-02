@@ -1,41 +1,58 @@
 <view>
-    <view>
-        <view><image></image> 订单已取消</view>
+    <view class="ordermake">
+        <view>
+        <block wx:if="{{orderdateil.statusid}}">
+          <image class='makeimg' src='../../img/status{{orderdateil.statusid}}.png'></image>
+        </block>
+        <h2>{{orderdateil.statusname}}</h2></view>
         <view><button>联系客服</button></view>
     </view>
-    <view>
-        <view>配送信息</view>
+    <view class='address'>
+        <view class='title'>配送信息</view>
         <view>
-          地址
+          <text>{{orderdateil.username}} {{orderdateil.Telphone}}</text>
+          <text>{{orderdateil.province}}{{orderdateil.city}}{{orderdateil.Area}}{{orderdateil.detailaddress}}{{orderdateil.doorplate}}</text>
         </view>
     </view>
-    <view>
-        <view>商品信息</view>
-        <view>
-          <good_list class='goodimg' prop-a="{{goodsCount}}" prop-b="{{orderlist}}"></good_list>
+    <view class='goodimg'>
+        <view class='title'>商品信息</view>
+        <view class='goodimglist'>
+          <good_list class='goodimg' prop-a="{{goodcount}}" prop-b="{{goodsimg}}" prop-c="orderinfo"></good_list>
         </view>
     </view>
-    <view>
-        <view>订单信息</view>
-        <view>
-          订单编号：
+    <view class='orderinfo'>
+        <view class='title'>订单信息</view>
+        <view class="ordernum">
+          订单编号：<text>{{orderdateil.ordernum}}</text>
         </view>
-        <view>
-          创建时间：
+        <view class="orderdate">
+          创建时间：<text>{{orderdateil.orderdate}}</text>
         </view>
     </view>
-    <view>
+    <view class='orderprice'>
         <view>
-        商品总价：
+        商品总价：<text>￥{{orderdateil.goodtolprice}}</text>
         </view>
         <view>
-        商品实付：
+        商品实付：<text>￥{{orderdateil.payprice}}</text>
         </view>
         <view>
         配送费：
+        <block wx:if="{{orderdateil.deliveryprice!=0}}">
+        <text>￥{{orderdateil.deliveryprice}}</text>
+        </block>
+        <block wx:else>
+        <text>包邮</text>
+        </block>
         </view>
         <view>
-        合计：
+          <text>合计：￥{{orderdateil.payprice}}</text>
         </view>
     </view>
+    <block wx:if="{{orderdateil.statusid==1}}">
+      <view class='cancelorpay'>
+        <view class='cancel' bindtap='cancelorder'>取消订单</view>
+        <view class='pay'>去支付</view>
+      </view>
+    </block>
 </view>

@@ -8,6 +8,9 @@ Component({
     },
     propB: {
       type: Array
+    },
+    propC: {
+      type: String
     }
   },
 
@@ -22,9 +25,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    showgoodslist:function(){
+    showgoodslist:function(e){
+      let op = e.currentTarget.dataset.op
       wx.navigateTo({
-        url: '../checkOrder/goodslist'
+        url: '../checkOrder/goodslist?op=' + op
       })
     }
   },ready:function(){

@@ -53,7 +53,7 @@ Page({
     })
   }, 
   onHide: function () {
-    setTimeout(() => { this.setData({ totalPrice: 0, goodsCount: 0, goodsTypeCount: 0, paygoods:[] }) }, 500)
+    setTimeout(() => { this.setData({ totalPrice: 0, goodsCount: 0, goodsTypeCount: 0, paygoods:[],goodsimg:[] }) }, 500)
   },
   showgoodslist: function () {
     wx.navigateTo({

@@ -6,7 +6,7 @@
             </block>
          </scroll-view>
     </view>
-    <view bindtap='showgoodslist' hidden='{{!propA}}'>
+    <view bindtap='showgoodslist' hidden='{{!propA}}' data-op="{{propC}}">
     <text>共{{propA}}件</text><image class="ordergoodlist" src='../../img/sel.png'></image>
     </view>
 </view>

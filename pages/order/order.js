@@ -1,6 +1,5 @@
 //获取应用实例
 const app = getApp()
-const util = require('../../utils/util.js')
 Page({
 
   /**
@@ -48,9 +47,10 @@ Page({
       }
     })
   },
-  orderdateil:function(){
+  orderdateil:function(e){
+    let orderid = e.target.dataset.orderid || e.currentTarget.dataset.orderid
     wx.navigateTo({
-      url: '../order/orderDateil'
+      url: '../order/orderDateil?orderid=' + orderid
     })
   }
 })

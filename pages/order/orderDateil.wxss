@@ -1,0 +1,20 @@
+page{background-color: #f7f7f7}
+.address,.goodimg,.orderinfo,.orderprice,.ordermake{background-color: #fff}
+.ordermake{height:220rpx;text-align: center;margin-bottom:10rpx}
+.ordermake view:first-of-type .makeimg{width:64rpx;height:64rpx;vertical-align: middle;margin-right:20rpx;}
+.ordermake view:last-of-type button{width: 180rpx;height:60rpx;line-height: 60rpx;border-radius:0;background-color:#fff;font-size:14px;margin-top:40rpx;}
+.address,.goodimg,.orderinfo{margin-bottom:10rpx;}
+.title{border:1px #f7f7f7 solid;height:60rpx;line-height:60rpx;padding:10rpx;font-size:17px;}
+.address view:last-of-type{padding:20rpx;font-size: 14px}
+.address view:last-of-type text:last-of-type{display: block;font-size: 12px}
+.ordernum{padding: 10rpx;border-bottom: 1px #f7f7f7 solid;font-size:14px}
+.orderdate{padding: 10rpx;font-size:14px}
+.orderprice{padding-bottom:60rpx;}
+.orderprice view{border-bottom:1px #f7f7f7 solid;height:60rpx;line-height:60rpx;padding:10rpx;font-size:14px;}
+.orderprice view text{float: right}
+.orderprice view:last-of-type text{color:#a3158e;font-size:18px}
+.goodimglist{padding-bottom: 5rpx}
+.cancelorpay{position: fixed;font-size: 14px;bottom:0;width:100%;height:60rpx;border-top:1px #f7f7f7 solid}
+.cancelorpay view{width: 50%;height:100%;text-align: center;line-height: 60rpx}
+.cancelorpay .cancel{float: left;background-color:#fff;}
+.cancelorpay .pay{color:#fff;background-color: #a3158e;float: right}
