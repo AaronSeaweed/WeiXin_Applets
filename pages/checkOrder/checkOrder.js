@@ -9,7 +9,8 @@ Page({
     userinfo:[],
     hideadd:0,
     grossPrice:0,
-    goodsimg:[]
+    goodsimg:[],
+    deliveryprice:5
   },
   onLoad(){
     wx.showLoading({
@@ -92,6 +93,37 @@ Page({
   },
   //生成订单
   checkOrder:function(){
-      
+    if (this.data.hideadd == 0) {
+      let that = this;
+      wx.request({
+        url: app.globalData.httpHost + '/weixin/addorder',
+        method: 'POST',
+        data: { goodtolprice: that.data.totalPrice, payprice: that.data.totalPrice, deliveryprice: that.data.deliveryprice, Reciinfo: that.data.userinfo.id, foodlist: that.data.paygoods },
+        success: function (res) {
+          if (res.data.status == 200 && res.data.message == "success") {
+            var orderid = res.data.orderid.insertId;
+            wx.navigateTo({
+              url: '../order/orderDateil?orderid=' + orderid
+            })
+          }
+          else if (res.data.code == 500) {
+            wx.showToast({
+              title: '订单提交失败',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+          else {
+            //出错
+          }
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '请选择收货地址',
+        icon: 'none',
+        duration: 2000
+      })
+    }
   }
 });

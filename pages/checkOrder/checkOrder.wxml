@@ -11,7 +11,7 @@
         <view><text>优惠券</text><text>无可用商品券</text><image src='../../img/sel.png'></image></view>
         <view><text>红包</text><text>无可用红包</text><image src='../../img/sel.png'></image></view>
         <view><text>商品实付</text><text>￥{{totalPrice}}</text></view>
-        <view><text>配送费</text><text>￥5</text></view>
+        <view><text>配送费</text><text>￥{{deliveryprice}}</text></view>
         <view><text>合计： ￥{{grossPrice}}</text></view>
     </view>
     <view class='Gotopay'>
